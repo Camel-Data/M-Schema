@@ -1,0 +1,3377 @@
+{
+  "schema": "dreamland",
+  "tables": {
+    "dreamland.app_act_acc_pay": {
+      "fields": {
+        "activity_id": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动id",
+          "examples": [
+            "296",
+            "376",
+            "371",
+            "399",
+            "293"
+          ]
+        },
+        "activity_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "累充活动类型",
+          "examples": [
+            "1"
+          ]
+        },
+        "offset": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "服务器偏移",
+          "examples": [
+            "-1"
+          ]
+        },
+        "user_id": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户id",
+          "examples": [
+            "6815800018",
+            "4289400018",
+            "6668100018",
+            "6317100018",
+            "5920800018"
+          ]
+        },
+        "from_server": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "from_server",
+          "examples": [
+            "1",
+            "2"
+          ]
+        },
+        "is_cn": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "is_cn",
+          "examples": [
+            "0"
+          ]
+        },
+        "simple_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "simple_type",
+          "examples": [
+            "DUMMY",
+            "ROLLER",
+            "SANDBOX",
+            "NEW"
+          ]
+        },
+        "country_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "country_type",
+          "examples": [
+            "T1",
+            "T3"
+          ]
+        },
+        "is_normal": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "is_normal",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "create_date_range": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "注册天数区间",
+          "examples": [
+            "[60, 90)",
+            "[90, 120)",
+            "[120, 150)",
+            "[30, 60)",
+            "[150, 180)"
+          ]
+        },
+        "acc_pay_amt_inday_range": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "累计付费金额区间",
+          "examples": [
+            "never pay",
+            "[1, 100)",
+            "[100, 500)",
+            "[1000, 5000)",
+            "[0.01, 1)"
+          ]
+        },
+        "last_14d_pay_amt_inday_range": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近14天付费金额区间",
+          "examples": [
+            "never pay",
+            "[5, 100)",
+            "[0, 0.01)",
+            "[100, 500)",
+            "[1, 5)"
+          ]
+        },
+        "last_30d_pay_amt_inday_range": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近30天付费金额区间",
+          "examples": [
+            "never pay",
+            "[10, 100)",
+            "[0, 0.01)",
+            "[0.01, 1)",
+            "[1, 10)"
+          ]
+        },
+        "city_level_e": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "主堡等级",
+          "examples": [
+            "20",
+            "21",
+            "22",
+            "23",
+            "8"
+          ]
+        },
+        "alc_id": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "联盟id，",
+          "examples": [
+            "500200019",
+            "1368328900019",
+            "649700019",
+            "1225816400019",
+            "538900019"
+          ]
+        },
+        "alc_power_rank": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "联盟战力排行",
+          "examples": [
+            "9",
+            "16",
+            "32",
+            "3",
+            "14"
+          ]
+        },
+        "alc_power_range": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "联盟战力排行区间",
+          "examples": [
+            "no alliance",
+            "[4, 4]",
+            "[1, 1]",
+            "[6, 10]",
+            "[51, inf)"
+          ]
+        },
+        "begin_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动开始时间",
+          "examples": [
+            "2025-02-21 00:05:00"
+          ]
+        },
+        "finish_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动结束日时间",
+          "examples": [
+            "2025-05-28 23:59:00"
+          ]
+        },
+        "begin_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动开始日期",
+          "examples": [
+            "2025-01-27"
+          ]
+        },
+        "finish_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动结束日期",
+          "examples": [
+            "2025-04-30"
+          ]
+        },
+        "activity_duration": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动持续天数",
+          "examples": [
+            "5",
+            "7",
+            "6"
+          ]
+        },
+        "is_ended": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动是否已结束",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "act_acc_pay_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动总计消费金额",
+          "examples": [
+            "0.99",
+            "6.95",
+            "8.92",
+            "6.93",
+            "4.95"
+          ]
+        },
+        "act_acc_score": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动总计获得积分",
+          "examples": [
+            "10",
+            "60",
+            "20",
+            "680",
+            "50"
+          ]
+        },
+        "max_score_rank": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "积分档位",
+          "examples": [
+            "3",
+            "0",
+            "1",
+            "4",
+            "2"
+          ]
+        },
+        "act_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动日期",
+          "examples": [
+            "2025-01-28"
+          ]
+        },
+        "activity_day": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动天数",
+          "examples": [
+            "3",
+            "1",
+            "2",
+            "5",
+            "4"
+          ]
+        },
+        "daily_activity_consume_amount": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当日活动消费金额",
+          "examples": [
+            "0.99",
+            "4.99",
+            "9.99",
+            "1.99",
+            "5.98"
+          ]
+        },
+        "daily_integral_earned": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当日活动获得积分",
+          "examples": [
+            "380",
+            "10",
+            "60",
+            "50",
+            "180"
+          ]
+        },
+        "dau": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "dau",
+          "examples": [
+            "1",
+            "2",
+            "18",
+            "3",
+            "4"
+          ]
+        },
+        "pau": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "pau",
+          "examples": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "13"
+          ]
+        },
+        "op_time": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "2025-06-10 01:21:05"
+          ]
+        },
+        "load_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "2025-06-10"
+          ]
+        }
+      },
+      "examples": [],
+      "comment": ""
+    },
+    "dreamland.app_func_chapter_report": {
+      "fields": {
+        "stat_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "统计日期",
+          "examples": [
+            "2025-06-09"
+          ]
+        },
+        "user_id": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户ID",
+          "examples": [
+            "1500018",
+            "1700018",
+            "2900018",
+            "3300018",
+            "3700018"
+          ]
+        },
+        "from_server": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "服务器ID",
+          "examples": [
+            "1",
+            "2"
+          ]
+        },
+        "simple_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户类型",
+          "examples": [
+            "SANDBOX",
+            "NEW",
+            "ROLLER",
+            "DUMMY"
+          ]
+        },
+        "country_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "国家类型",
+          "examples": [
+            "T1",
+            "T3"
+          ]
+        },
+        "is_normal": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否正常用户",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "is_cn": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否国服",
+          "examples": [
+            "0"
+          ]
+        },
+        "create_days_range": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "创建天数区间",
+          "examples": [
+            "[180, 360)",
+            "[60, 90)",
+            "[150, 180)",
+            "[90, 120)",
+            "[30, 60)"
+          ]
+        },
+        "city_level": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "主堡等级",
+          "examples": [
+            "2",
+            "20",
+            "28",
+            "16",
+            "14"
+          ]
+        },
+        "last_14d_consume_amt_range": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近14天付费金额区间（消费口径）",
+          "examples": [
+            "never_pay",
+            "[0, 0.01)",
+            "[5, 100)",
+            "[1, 5)",
+            "[100, 500)"
+          ]
+        },
+        "last_30d_consume_amt_range": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近30天付费金额区间（消费口径）",
+          "examples": [
+            "never_pay",
+            "[0, 0.01)",
+            "[100, 500)",
+            "[10, 100)",
+            "[500, 1000)"
+          ]
+        },
+        "acc_consume_amt_range": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "累计付费金额区间（消费口径）",
+          "examples": [
+            "never_pay",
+            "[100, 500)",
+            "[0.01, 1)",
+            "[1, 100)",
+            "[1000, 5000)"
+          ]
+        },
+        "is_login": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户当天是否登录",
+          "examples": [
+            "0",
+            "1"
+          ]
+        },
+        "chapter_id": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "章节ID",
+          "examples": [
+            "36000000",
+            "36000001",
+            "36000008",
+            "36000002",
+            "36000004"
+          ]
+        },
+        "is_chapter_open": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "章节是否开启",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "chapter_open_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "章节开启时间",
+          "examples": [
+            "2024-12-08 03:21:19"
+          ]
+        },
+        "is_chapter_finish": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "章节是否完成",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "chapter_finish_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "章节完成时间",
+          "examples": [
+            "2024-12-08 03:16:43"
+          ]
+        },
+        "is_chapter_reward": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "章节是否领奖",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "chapter_reward_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "章节领奖时间",
+          "examples": [
+            "2024-12-08 03:16:45"
+          ]
+        },
+        "task_id": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "章节任务ID",
+          "examples": [
+            "80003021",
+            "80003051",
+            "80003041",
+            "80003031",
+            "80003011"
+          ]
+        },
+        "is_task_open": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "任务是否开启",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "task_open_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "任务开启时间",
+          "examples": [
+            "2024-12-25 13:52:26"
+          ]
+        },
+        "is_task_reward": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "章节是否领奖",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "task_reward_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "章节领奖时间",
+          "examples": [
+            "2024-12-08 07:06:43"
+          ]
+        }
+      },
+      "examples": [],
+      "comment": ""
+    },
+    "dreamland.app_kpi": {
+      "fields": {
+        "stat_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "统计日期",
+          "examples": [
+            "2024-12-15"
+          ]
+        },
+        "from_server": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "服务器ID",
+          "examples": [
+            "1",
+            "2"
+          ]
+        },
+        "true_server": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "服务器ID",
+          "examples": [
+            "1",
+            "2"
+          ]
+        },
+        "true_server_is_cn": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否国服",
+          "examples": [
+            "0"
+          ]
+        },
+        "open_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "true server开服日期",
+          "examples": [
+            "2024-12-08"
+          ]
+        },
+        "open_days": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "true server开服天数",
+          "examples": [
+            "4",
+            "7",
+            "1",
+            "74",
+            "13"
+          ]
+        },
+        "media_source": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "媒体类型",
+          "examples": [
+            "ORGANIC",
+            "FACEBOOK ADS",
+            "JOIN_MISSING",
+            "RESTRICTED",
+            "GOOGLEADWORDS_INT"
+          ]
+        },
+        "is_organic": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "自然量",
+          "examples": [
+            "ORGANIC",
+            "NOT ORGANIC"
+          ]
+        },
+        "agency": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "代理",
+          "examples": [
+            "NONE",
+            "CAMEL1",
+            "KEMU1",
+            "RESTRICTED",
+            "JOIN_MISSING"
+          ]
+        },
+        "country_code": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "国家",
+          "examples": [
+            "CN",
+            "US",
+            "ID",
+            "PH",
+            "AU"
+          ]
+        },
+        "t_g": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "国家类型",
+          "examples": [
+            "T3",
+            "T1"
+          ]
+        },
+        "platform": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "平台类型",
+          "examples": [
+            "ANDROID",
+            "IOS"
+          ]
+        },
+        "raw_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户类型",
+          "examples": [
+            "ROLLER",
+            "NEW",
+            "DUMMY",
+            "SANDBOX"
+          ]
+        },
+        "app_id": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "包体ID",
+          "examples": [
+            "COM.PERGAME.STARLITEDEN",
+            "JOIN_MISSING"
+          ]
+        },
+        "register_channel": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "注册渠道",
+          "examples": [
+            "CAMEL_GOOGLE",
+            "CAMEL_IOS"
+          ]
+        },
+        "is_normal": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否正常用户",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "is_conductivity": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否导量用户",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "jump_from_server": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "跳服用户，跳服：server_id 没跳服：0",
+          "examples": [
+            "0"
+          ]
+        },
+        "acc_amt": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "废弃字段，兼容tableau暂时保留",
+          "examples": []
+        },
+        "last_30d_pay_amt_tier": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近30天累计现金支付金额层级(不含当天)",
+          "examples": [
+            "[0]",
+            "(0,100)",
+            "[500,1000)",
+            "[100,500)",
+            "[1000,5000)"
+          ]
+        },
+        "new_users": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "新注册用户数",
+          "examples": [
+            "2",
+            "1",
+            "0",
+            "70",
+            "30"
+          ]
+        },
+        "new_lv2_users": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "新注册2级用户数",
+          "examples": [
+            "0",
+            "19",
+            "9",
+            "1",
+            "5"
+          ]
+        },
+        "dau": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活跃用户数",
+          "examples": [
+            "29",
+            "334",
+            "16",
+            "428",
+            "1"
+          ]
+        },
+        "device_dau": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活跃设备数",
+          "examples": [
+            "28",
+            "34",
+            "2",
+            "12",
+            "3"
+          ]
+        },
+        "pau": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活跃付费用户数",
+          "examples": [
+            "61",
+            "0",
+            "45",
+            "3",
+            "11"
+          ]
+        },
+        "p7au": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活跃近7付费用户数",
+          "examples": [
+            "0",
+            "13",
+            "2",
+            "35",
+            "21"
+          ]
+        },
+        "p14au": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活跃近14付费用户数",
+          "examples": [
+            "3",
+            "0",
+            "13",
+            "16",
+            "2"
+          ]
+        },
+        "dau_churn": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "dau流失",
+          "examples": [
+            "0",
+            "1",
+            "2",
+            "4",
+            "30"
+          ]
+        },
+        "pau_churn": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "pau流失",
+          "examples": [
+            "0",
+            "1",
+            "4",
+            "3",
+            "2"
+          ]
+        },
+        "back": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "回流",
+          "examples": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        "pau_back": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "pau回流",
+          "examples": [
+            "0",
+            "1",
+            "2"
+          ]
+        },
+        "r2": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "2日留存数",
+          "examples": [
+            "0",
+            "3",
+            "73",
+            "12",
+            "8"
+          ]
+        },
+        "r3": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "3日留存数",
+          "examples": [
+            "0",
+            "53",
+            "22",
+            "1",
+            "2"
+          ]
+        },
+        "r7": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "7日留存数",
+          "examples": [
+            "0",
+            "6",
+            "7",
+            "37",
+            "3"
+          ]
+        },
+        "r14": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "14日留存数",
+          "examples": [
+            "0",
+            "5",
+            "8",
+            "1",
+            "12"
+          ]
+        },
+        "r30": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "30日留存数",
+          "examples": [
+            "0",
+            "2",
+            "8",
+            "1",
+            "10"
+          ]
+        },
+        "r60": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "60日留存数",
+          "examples": [
+            "0",
+            "10",
+            "2",
+            "1",
+            "3"
+          ]
+        },
+        "pay_users": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "付费用户",
+          "examples": [
+            "0",
+            "2",
+            "1",
+            "21",
+            "3"
+          ]
+        },
+        "currency_amount": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "付费金额",
+          "examples": [
+            "83.83",
+            "57.73",
+            "0.0",
+            "38.69",
+            "30.83"
+          ]
+        },
+        "web_pay_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "网页支付金额",
+          "examples": [
+            "0.0"
+          ]
+        },
+        "new_pay_users": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "新增付费用户",
+          "examples": [
+            "0",
+            "1",
+            "6",
+            "2",
+            "3"
+          ]
+        },
+        "pay_in_24h": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "24小时内付费用户",
+          "examples": [
+            "0",
+            "13",
+            "4",
+            "10",
+            "15"
+          ]
+        },
+        "pay_in_72h": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "72小时内付费用户",
+          "examples": [
+            "0",
+            "19",
+            "11",
+            "3",
+            "1"
+          ]
+        },
+        "online_users": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "在线用户数",
+          "examples": [
+            "176",
+            "235",
+            "118",
+            "545",
+            "16"
+          ]
+        },
+        "online_time": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "在线时长",
+          "examples": [
+            "4200",
+            "397320",
+            "4140",
+            "1953240",
+            "82260"
+          ]
+        },
+        "login_count": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "登录次数",
+          "examples": [
+            "860",
+            "133",
+            "159",
+            "81",
+            "712"
+          ]
+        },
+        "op_time": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "数据加工时间",
+          "examples": [
+            "2025-06-10 01:20:11"
+          ]
+        },
+        "load_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "数据加工日期",
+          "examples": [
+            "2025-06-10"
+          ]
+        }
+      },
+      "examples": [],
+      "comment": ""
+    },
+    "dreamland.app_pay_detail": {
+      "fields": {
+        "user_id": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户ID",
+          "examples": [
+            "1453600018",
+            "521100018",
+            "5485500018",
+            "7056900028",
+            "19055900028"
+          ]
+        },
+        "user_name": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户昵称",
+          "examples": [
+            "Dydyl",
+            "mudamuda",
+            "Enarhiel",
+            "emps",
+            "whatfck"
+          ]
+        },
+        "pay_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "支付日期",
+          "examples": [
+            "2025-01-08"
+          ]
+        },
+        "game_order_id": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "订单ID",
+          "examples": [
+            "6927800028_1110300161_28398_camel_google",
+            "7061200028_1101401952_28348_camel_google",
+            "8855100028_131400004_30962_camel_google",
+            "1041800018_1223000422_36663_camel_google",
+            "3655700018_1110100021_34353_camel_google"
+          ]
+        },
+        "source_order_id": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "订单ID",
+          "examples": [
+            "payflame_20500018_1223000161_36928_camel_google",
+            "payflame_3978200018_1110300092_37012_camel_google",
+            "GPA.3305-1075-8317-12637",
+            "payflame_6897000028_1101402251_30267_camel_google",
+            "payflame_14800018_131600004_42205_camel_google"
+          ]
+        },
+        "consume_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "订单支付金额(消费),tag1为代币时使用现金支付金额",
+          "examples": [
+            "4.99",
+            "19.99",
+            "5.99",
+            "2.99",
+            "29.99"
+          ]
+        },
+        "create_time": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "订单完成时间",
+          "examples": [
+            "1738437006188",
+            "1741151521554",
+            "1742020288057",
+            "1745050653689",
+            "1741134034084"
+          ]
+        },
+        "package_gid": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "礼包ID",
+          "examples": [
+            "131200004",
+            "131800004",
+            "1110100021",
+            "1210100061",
+            "1110300021"
+          ]
+        },
+        "server_id": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "服务器ID",
+          "examples": [
+            "2",
+            "1"
+          ]
+        },
+        "city_level": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "主堡等级",
+          "examples": [
+            "26",
+            "25",
+            "18",
+            "24",
+            "21"
+          ]
+        },
+        "act_name": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "活动名称",
+          "examples": [
+            "自选英雄礼包",
+            "点金手商城",
+            "周卡_加速周卡",
+            "购买第二生产台",
+            "常规_周六常规_巨像_巨像升星材料a"
+          ]
+        },
+        "type": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "105",
+            "23",
+            "102",
+            "26",
+            "107"
+          ]
+        },
+        "package_activity": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "341",
+            "0",
+            "108",
+            "198",
+            "164"
+          ]
+        },
+        "payment_channel": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "支付渠道",
+          "examples": [
+            "camel_google",
+            "camel_ios"
+          ]
+        },
+        "tag1": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "礼包tag",
+          "examples": [
+            "装备",
+            "英雄",
+            "巨像",
+            "资源",
+            "加速|资源"
+          ]
+        },
+        "tag2": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "礼包tag",
+          "examples": [
+            "装备宝箱",
+            "盗火行动",
+            "转盘_英雄",
+            "定向碎片",
+            "周卡_综合"
+          ]
+        },
+        "tag3": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "礼包tag",
+          "examples": [
+            "原质特调",
+            "米歇尔_转盘",
+            "锻造芯片",
+            "「奥托」机密数据",
+            "科技点"
+          ]
+        },
+        "pay_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "支付方式",
+          "examples": []
+        },
+        "pay_platform": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "支付平台",
+          "examples": []
+        },
+        "package_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "礼包类型",
+          "examples": [
+            "英雄自选礼包",
+            "日特惠",
+            "英雄特惠",
+            "常规礼包"
+          ]
+        },
+        "is_loop_package": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否循环礼包",
+          "examples": [
+            "-1",
+            "1",
+            "0"
+          ]
+        },
+        "free_collection": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否免费",
+          "examples": [
+            "0",
+            "-1"
+          ]
+        },
+        "show_time": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "礼包展示时长(小时)",
+          "examples": [
+            "24",
+            "-1",
+            "96",
+            "168",
+            "720"
+          ]
+        },
+        "loop_time": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "循环周期(小时)",
+          "examples": [
+            "24",
+            "-1",
+            "168",
+            "48",
+            "999999"
+          ]
+        },
+        "begin_day_of_week": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "重置时间(星期几)",
+          "examples": [
+            "3",
+            "5",
+            "-1",
+            "4",
+            "1"
+          ]
+        },
+        "simple_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户类型",
+          "examples": [
+            "NEW",
+            "ROLLER",
+            "SANDBOX",
+            "DUMMY"
+          ]
+        },
+        "register_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "注册时间",
+          "examples": [
+            "2024-12-10 04:01:23"
+          ]
+        },
+        "install_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "安装时间",
+          "examples": [
+            "2024-12-15 17:18:48"
+          ]
+        },
+        "country_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "国家类型",
+          "examples": [
+            "T3",
+            "T1"
+          ]
+        },
+        "country": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "国家",
+          "examples": [
+            "US",
+            "UK",
+            "CN",
+            "AU",
+            "PH"
+          ]
+        },
+        "last_sync_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "最近活跃时间",
+          "examples": [
+            "2025-03-28 10:25:49"
+          ]
+        },
+        "is_cn": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否国服",
+          "examples": [
+            "0"
+          ]
+        },
+        "true_server": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "服务器ID",
+          "examples": [
+            "1",
+            "2"
+          ]
+        },
+        "platform": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "平台",
+          "examples": [
+            "ANDROID",
+            "IOS"
+          ]
+        },
+        "is_normal": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否正常用户",
+          "examples": [
+            "0",
+            "1"
+          ]
+        },
+        "media_source": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "媒体源",
+          "examples": [
+            "FACEBOOK ADS",
+            "ORGANIC",
+            "GOOGLEADWORDS_INT",
+            "JOIN_MISSING",
+            "RESTRICTED"
+          ]
+        },
+        "optimize_event": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "优化事件",
+          "examples": [
+            "VO",
+            "3.0",
+            "AEOPURCHASE",
+            "JOIN_MISSING"
+          ]
+        },
+        "first_pay_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户首次付费日期",
+          "examples": [
+            "2025-01-02"
+          ]
+        },
+        "first_pay_date_on_webpage": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户首次网页付费日期",
+          "examples": []
+        },
+        "last_pay_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户的上一次付费日期",
+          "examples": [
+            "2025-05-16"
+          ]
+        },
+        "consume_amt_d": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "日支付金额（消费）",
+          "examples": [
+            "24.98",
+            "44.92",
+            "14.98",
+            "44.95",
+            "0.99"
+          ]
+        },
+        "consume_amt_7d": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近7支付金额(不包含当天)（消费）",
+          "examples": [
+            "4.99",
+            "4072.9",
+            "0.0",
+            "108.85",
+            "79.9"
+          ]
+        },
+        "consume_amt_14d": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近14支付金额(不包含当天)（消费）",
+          "examples": [
+            "0.0",
+            "49.91",
+            "425.57",
+            "412.51",
+            "204.69"
+          ]
+        },
+        "consume_amt_30d": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近30支付金额(不包含当天)（消费）",
+          "examples": [
+            "59.94",
+            "0.0",
+            "561.17",
+            "95.84",
+            "2672.9"
+          ]
+        },
+        "consume_amt_total": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "累计支付金额（消费）",
+          "examples": [
+            "457.41",
+            "0.0",
+            "838.74",
+            "95.84",
+            "4459.99"
+          ]
+        },
+        "op_time": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "etl加工时间",
+          "examples": [
+            "2025-06-10 01:26:52"
+          ]
+        },
+        "load_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "etl加工日期",
+          "examples": [
+            "2025-06-10"
+          ]
+        }
+      },
+      "examples": [],
+      "comment": ""
+    },
+    "dreamland.dim_user_info": {
+      "fields": {
+        "user_id": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "3700018",
+            "4400018",
+            "6000018",
+            "8500018",
+            "16800018"
+          ]
+        },
+        "user_name": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "joey",
+            "16600018",
+            "18400018",
+            "18700018",
+            "18800018"
+          ]
+        },
+        "city_level": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "0",
+            "21",
+            "26",
+            "30",
+            "5"
+          ]
+        },
+        "alliance_id": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "0",
+            "502100019",
+            "500200019",
+            "507400019",
+            "2039438600019"
+          ]
+        },
+        "language": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "0",
+            "1",
+            "3",
+            "14",
+            "5"
+          ]
+        },
+        "language_af": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "中文",
+            "ENGLISH",
+            "INDONESIA",
+            "한국어",
+            "TIẾNG VIỆT"
+          ]
+        },
+        "country": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "DE",
+            "US",
+            "ID",
+            "CA",
+            "PH"
+          ]
+        },
+        "country_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "T1",
+            "T3"
+          ]
+        },
+        "register_channel": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "CAMEL_GOOGLE",
+            "CAMEL_IOS"
+          ]
+        },
+        "register_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "2024-12-08 03:14:54"
+          ]
+        },
+        "install_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "2024-12-08 02:59:56"
+          ]
+        },
+        "create_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "2024-12-08 03:00:51"
+          ]
+        },
+        "last_sync_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "2025-03-28 11:12:37"
+          ]
+        },
+        "from_server": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "1",
+            "2"
+          ]
+        },
+        "last_receive_server": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "-1"
+          ]
+        },
+        "simple_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "SANDBOX",
+            "ROLLER",
+            "NEW",
+            "MISSING",
+            "DUMMY"
+          ]
+        },
+        "true_server": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "1",
+            "0",
+            "2"
+          ]
+        },
+        "true_server_is_cn": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "0"
+          ]
+        },
+        "jump_from_server": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "0"
+          ]
+        },
+        "root_af_type": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "1",
+            "3",
+            "2"
+          ]
+        },
+        "root_user_id_af": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "4200018",
+            "4900018",
+            "12200018",
+            "10200018",
+            "10600018"
+          ]
+        },
+        "media_source": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "ORGANIC",
+            "FACEBOOK ADS",
+            "GOOGLEADWORDS_INT",
+            "RESTRICTED",
+            "JOIN_MISSING"
+          ]
+        },
+        "agency": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "NONE",
+            "CAMEL1",
+            "RESTRICTED",
+            "JOIN_MISSING",
+            "KEMU2"
+          ]
+        },
+        "af_channel": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "FACEBOOK",
+            "INSTAGRAM",
+            "ACI_DISPLAY",
+            "AUDIENCENETWORK"
+          ]
+        },
+        "platform": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "ANDROID",
+            "IOS"
+          ]
+        },
+        "campaign": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "CAMEL1_STELLAR_AND_PH_ROI_AEOPURCHASE_WL_241203",
+            "CAMEL1_STELLAR_AND_US_ROI_AEOPURCHASE_WL_241203",
+            "CAMEL1_STELLAR_AND_AU_ROI_AEOPURCHASE_WL_241203",
+            "CAMEL1_STELLAR_AND_ID_ROI_AEOPURCHASE_WL_241203"
+          ]
+        },
+        "app_id": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "JOIN_MISSING",
+            "COM.PERGAME.STARLITEDEN"
+          ]
+        },
+        "af_ad": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "V247A_3",
+            "V156A_4",
+            "V218A_4",
+            "V089B_4"
+          ]
+        },
+        "adset": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "PH_AEOPURCHASE_CORE",
+            "PH_AEOPURCHASE_NONCORE",
+            "AU_AEOPURCHASE_ALL",
+            "CA_AEOPURCHASE_ALL"
+          ]
+        },
+        "app_version": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "0.7.106",
+            "JOIN_MISSING",
+            "0.6.115",
+            "0.7.104",
+            "0.6.106"
+          ]
+        },
+        "device_brand": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "JOIN_MISSING"
+          ]
+        },
+        "device_model": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "SAMSUNG::SM-G9810",
+            "SAMSUNG::SM-A5260",
+            "GOOGLE::PIXEL 8A",
+            "ONEPLUS::PJA110",
+            "INFINIX::INFINIX X670"
+          ]
+        },
+        "material_name": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "传送带射击",
+            "危机氛围&和平氛围",
+            "推帘建造",
+            "生存建造"
+          ]
+        },
+        "material_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "JOIN_MISSING",
+            "一类建造",
+            "二类塔防",
+            "一类模拟经营"
+          ]
+        },
+        "campaign_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "未知",
+            "JOIN_MISSING",
+            "AEO-Purchase",
+            "AEO-event-test",
+            "VO"
+          ]
+        },
+        "is_aso_user": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "0"
+          ]
+        },
+        "is_af_user": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "is_gs_user": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "is_root_ua": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "0",
+            "1"
+          ]
+        },
+        "is_conductivity": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "is_normal": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "root_user_id_ua": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "30500018",
+            "203800018",
+            "82900018",
+            "195800018",
+            "200400018"
+          ]
+        },
+        "ua_root_user_register_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "2024-12-08 03:25:28"
+          ]
+        },
+        "target": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "投放目标",
+          "examples": [
+            "ROI",
+            "JOIN_MISSING",
+            "DAU"
+          ]
+        },
+        "optimize_event": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "优化事件",
+          "examples": [
+            "AEOPURCHASE",
+            "JOIN_MISSING",
+            "2.5",
+            "AEOEVENT,LEVEL3"
+          ]
+        },
+        "optimize_method": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "优化方式",
+          "examples": [
+            "BAU",
+            "JOIN_MISSING"
+          ]
+        },
+        "special_channel": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "特殊渠道",
+          "examples": [
+            "JOIN_MISSING"
+          ]
+        },
+        "is_test": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否测试",
+          "examples": [
+            "0",
+            "JOIN_MISSING",
+            "1"
+          ]
+        },
+        "is_iaa": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否IAA",
+          "examples": [
+            "0",
+            "JOIN_MISSING"
+          ]
+        },
+        "person": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "投放人员",
+          "examples": [
+            "王亮",
+            "严谨",
+            "JOIN_MISSING"
+          ]
+        },
+        "art_style": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "美术风格",
+          "examples": [
+            "素材-美漫风格",
+            "JOIN_MISSING"
+          ]
+        },
+        "begin_date": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "系列开启/搭建日期",
+          "examples": [
+            "241203",
+            "241205",
+            "JOIN_MISSING",
+            "240712"
+          ]
+        },
+        "launch_type": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "投放类型",
+          "examples": [
+            "正式",
+            "JOIN_MISSING",
+            "首测"
+          ]
+        },
+        "other_keyword": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "其他关键字集合",
+          "examples": [
+            "STELLAR",
+            "PURCHASE,STELLAR",
+            "JOIN_MISSING"
+          ]
+        },
+        "op_time": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "2025-06-10 04:36:39"
+          ]
+        },
+        "load_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "",
+          "examples": [
+            "2025-06-10"
+          ]
+        }
+      },
+      "examples": [],
+      "comment": ""
+    },
+    "dreamland.dws_user_lifetime": {
+      "fields": {
+        "user_id": {
+          "type": "bigint",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户ID",
+          "examples": [
+            "100018",
+            "1600018",
+            "1700018",
+            "1800018",
+            "2400018"
+          ]
+        },
+        "create_time": {
+          "type": "timestamp(3)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "用户创建时间",
+          "examples": [
+            "2024-12-08 03:00:14"
+          ]
+        },
+        "life_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "生涯日期",
+          "examples": [
+            "2025-02-01"
+          ]
+        },
+        "life_days": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "生涯天数",
+          "examples": [
+            "67",
+            "139",
+            "152",
+            "155",
+            "173"
+          ]
+        },
+        "pay_life_days": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "付费生涯天数",
+          "examples": [
+            "10",
+            "44",
+            "45",
+            "72",
+            "77"
+          ]
+        },
+        "cum_login_days": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "累计登录天数",
+          "examples": [
+            "12",
+            "36",
+            "56",
+            "82",
+            "107"
+          ]
+        },
+        "last_30d_login_days": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近30天累计登录天数",
+          "examples": [
+            "4",
+            "5",
+            "23",
+            "30",
+            "0"
+          ]
+        },
+        "from_server": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "登录服务器",
+          "examples": [
+            "1",
+            "2"
+          ]
+        },
+        "is_login": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否登录",
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "login_count": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当天登录次数",
+          "examples": [
+            "17",
+            "12",
+            "0",
+            "8",
+            "6"
+          ]
+        },
+        "active_time": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当天在线时长",
+          "examples": [
+            "0",
+            "5220",
+            "16800",
+            "6300",
+            "8100"
+          ]
+        },
+        "city_level_s": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当天初始城市等级",
+          "examples": [
+            "8",
+            "18",
+            "21",
+            "25",
+            "26"
+          ]
+        },
+        "city_level_e": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当天结束城市等级",
+          "examples": [
+            "22",
+            "29",
+            "30",
+            "0",
+            "5"
+          ]
+        },
+        "is_churn": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否流失",
+          "examples": [
+            "0",
+            "1"
+          ]
+        },
+        "is_back": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "是否回流",
+          "examples": [
+            "0",
+            "1"
+          ]
+        },
+        "the_day_pay_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当天现金支付金额",
+          "examples": [
+            "0.0",
+            "2.99",
+            "26.95",
+            "21.94",
+            "4.99"
+          ]
+        },
+        "the_day_pay_cnt": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当天现金支付次数",
+          "examples": [
+            "0",
+            "2",
+            "3",
+            "1",
+            "13"
+          ]
+        },
+        "the_day_web_pay_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当天现金网页支付金额",
+          "examples": [
+            "0.0"
+          ]
+        },
+        "last_7d_pay_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近7天现金支付金额(不含当天)",
+          "examples": [
+            "0.0",
+            "37.96",
+            "399.96",
+            "29.94",
+            "2.99"
+          ]
+        },
+        "last_14d_pay_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近14天现金支付金额(不含当天)",
+          "examples": [
+            "0.0",
+            "119.87",
+            "68.87",
+            "93.82",
+            "112.85"
+          ]
+        },
+        "last_30d_pay_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近30天现金支付金额(不含当天)",
+          "examples": [
+            "199.98",
+            "157.83",
+            "0.0",
+            "399.96",
+            "63.88"
+          ]
+        },
+        "acc_pay_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "累计现金支付金额(不含当天)",
+          "examples": [
+            "357.81",
+            "757.77",
+            "877.73",
+            "0.0",
+            "157.73"
+          ]
+        },
+        "last_7d_pay_amt_inday": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近7天现金支付金额(含当天)",
+          "examples": [
+            "0.0",
+            "37.96",
+            "24.95",
+            "2.99",
+            "15.96"
+          ]
+        },
+        "last_14d_pay_amt_inday": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近14天现金支付金额(含当天)",
+          "examples": [
+            "99.99",
+            "399.96",
+            "0.0",
+            "63.88",
+            "68.87"
+          ]
+        },
+        "last_30d_pay_amt_inday": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近30天现金支付金额(含当天)",
+          "examples": [
+            "199.98",
+            "99.99",
+            "0.0",
+            "118.82",
+            "266.65"
+          ]
+        },
+        "acc_pay_amt_inday": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "累计现金支付金额(含当天)",
+          "examples": [
+            "199.98",
+            "357.81",
+            "757.77",
+            "0.0",
+            "182.7"
+          ]
+        },
+        "the_day_consume_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当天消费金额",
+          "examples": [
+            "42.95",
+            "4.99",
+            "0.0",
+            "9.98",
+            "13.97"
+          ]
+        },
+        "the_day_consume_cnt": {
+          "type": "integer",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当天消费次数",
+          "examples": [
+            "0",
+            "6",
+            "1",
+            "4",
+            "2"
+          ]
+        },
+        "last_7d_consume_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近7天消费金额(不含当天)",
+          "examples": [
+            "45.93",
+            "146.8",
+            "210.76",
+            "37.95",
+            "47.93"
+          ]
+        },
+        "last_14d_consume_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近14天消费金额(不含当天)",
+          "examples": [
+            "146.83",
+            "195.8",
+            "171.77",
+            "101.86",
+            "64.94"
+          ]
+        },
+        "last_30d_consume_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近30天消费金额(不含当天)",
+          "examples": [
+            "94.86",
+            "524.35",
+            "198.74",
+            "204.74",
+            "193.79"
+          ]
+        },
+        "acc_consume_amt": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "累计消费金额(不含当天)",
+          "examples": [
+            "94.86",
+            "856.0",
+            "1054.74",
+            "1160.62",
+            "1238.55"
+          ]
+        },
+        "last_7d_consume_amt_inday": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近7天消费金额(含当天)",
+          "examples": [
+            "35.95",
+            "220.73",
+            "14.97",
+            "67.94",
+            "77.93"
+          ]
+        },
+        "last_14d_consume_amt_inday": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近14天消费金额(含当天)",
+          "examples": [
+            "194.73",
+            "57.91",
+            "100.89",
+            "95.9",
+            "163.84"
+          ]
+        },
+        "last_30d_consume_amt_inday": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "近30天消费金额(含当天)",
+          "examples": [
+            "612.61",
+            "607.6",
+            "177.83",
+            "372.69",
+            "0.0"
+          ]
+        },
+        "acc_consume_amt_inday": {
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "累计消费金额(含当天)",
+          "examples": [
+            "94.86",
+            "803.08",
+            "856.0",
+            "1044.76",
+            "1054.74"
+          ]
+        },
+        "device_ids": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "当天登录设备",
+          "examples": [
+            "a8bc8113fee04e2771a1d62e06c3f2be,9650a604c1e259cf280c83efaef0368b",
+            "9650a604c1e259cf280c83efaef0368b",
+            "720f8841384a73c1615f4eb1be323934",
+            "6f9afee98d5e40dd3aa275c44a9a1aa3",
+            "91b5498248b394c467ba37ff28dfe63a"
+          ]
+        },
+        "op_time": {
+          "type": "varchar",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "数据加工时间",
+          "examples": [
+            "2025-06-10 01:08:19"
+          ]
+        },
+        "load_date": {
+          "type": "date",
+          "primary_key": false,
+          "nullable": true,
+          "default": null,
+          "autoincrement": false,
+          "comment": "数据加工日期",
+          "examples": [
+            "2025-06-10"
+          ]
+        }
+      },
+      "examples": [],
+      "comment": ""
+    }
+  },
+  "foreign_keys": []
+}

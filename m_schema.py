@@ -3,8 +3,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple, Union
 
 
 class MSchema:
-    def __init__(self, db_id: str = 'Anonymous', schema: Optional[str] = None):
-        self.db_id = db_id
+    def __init__(self, schema: Optional[str] = None):
         self.schema = schema
         self.tables = {}
         self.foreign_keys = []
@@ -26,6 +25,7 @@ class MSchema:
             **kwargs}
 
     def add_foreign_key(self, table_name, field_name, ref_schema, ref_table_name, ref_field_name):
+        # Athena通常不支持外键约束，但保留此方法以备将来使用
         self.foreign_keys.append([table_name, field_name, ref_schema, ref_table_name, ref_field_name])
 
     def get_field_type(self, field_type, simple_mode=True)->str:
@@ -55,21 +55,21 @@ class MSchema:
         except:
             return {}
 
-    def single_table_mschema(self, table_name: str, selected_columns: List = None,
+    def single_table_mschema(self, table_name: str, selected_columns: Optional[List] = None,
                              example_num=3, show_type_detail=False) -> str:
         table_info = self.tables.get(table_name, {})
         output = []
         table_comment = table_info.get('comment', '')
+        
+        # 处理表名显示，考虑db_id和schema
+        table_display_name = table_name
+        if '.' not in table_name and self.schema:
+            table_display_name = f"{self.schema}.{table_name}"
+        
         if table_comment is not None and table_comment != 'None' and len(table_comment) > 0:
-            if self.schema is not None and len(self.schema) > 0:
-                output.append(f"# Table: {self.schema}.{table_name}, {table_comment}")
-            else:
-                output.append(f"# Table: {table_name}, {table_comment}")
+            output.append(f"# Table: {table_display_name}, {table_comment}")
         else:
-            if self.schema is not None and len(self.schema) > 0:
-                output.append(f"# Table: {self.schema}.{table_name}")
-            else:
-                output.append(f"# Table: {table_name}")
+            output.append(f"# Table: {table_display_name}")
 
         field_lines = []
         # 处理表中的每一个字段
@@ -122,7 +122,7 @@ class MSchema:
 
         return '\n'.join(output)
 
-    def to_mschema(self, selected_tables: List = None, selected_columns: List = None,
+    def to_mschema(self, selected_tables: Optional[List] = None, selected_columns: Optional[List] = None,
                    example_num=3, show_type_detail=False) -> str:
         """
         convert to a MSchema string.
@@ -131,8 +131,11 @@ class MSchema:
         """
         output = []
 
-        output.append(f"【DB_ID】 {self.db_id}")
-        output.append(f"【Schema】")
+        # 添加Schema信息
+        if self.schema:
+            output.append(f"【Schema: {self.schema}】")
+        else:
+            output.append(f"【Schema】")
 
         if selected_tables is not None:
             selected_tables = [s.lower() for s in selected_tables]
@@ -151,7 +154,7 @@ class MSchema:
                     cur_selected_columns = selected_columns
                 output.append(self.single_table_mschema(table_name, cur_selected_columns, example_num, show_type_detail))
 
-        # 添加外键信息，选择table_type为view时不展示外键
+        # 添加外键信息 - Athena通常不支持外键，但保留逻辑
         if self.foreign_keys:
             output.append("【Foreign keys】")
             for fk in self.foreign_keys:
@@ -166,7 +169,6 @@ class MSchema:
 
     def dump(self):
         schema_dict = {
-            "db_id": self.db_id,
             "schema": self.schema,
             "tables": self.tables,
             "foreign_keys": self.foreign_keys
@@ -179,7 +181,6 @@ class MSchema:
 
     def load(self, file_path: str):
         data = read_json(file_path)
-        self.db_id = data.get("db_id", "Anonymous")
         self.schema = data.get("schema", None)
         self.tables = data.get("tables", {})
         self.foreign_keys = data.get("foreign_keys", [])
