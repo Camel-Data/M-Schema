@@ -105,7 +105,7 @@ class SchemaEngine:
             
             # 查询列信息
             columns_sql = f"""
-            SELECT column_name, is_nullable, data_type, comment, extra_info
+            SELECT column_name, data_type, comment, extra_info
             FROM information_schema.columns 
             WHERE table_schema = '{schema_name}'
             AND table_name = '{table_name}'
@@ -123,10 +123,7 @@ class SchemaEngine:
                     column_info = {
                         'name': row['column_name'],
                         'type': row['data_type'],
-                        'nullable': row['is_nullable'].upper() == 'YES' if row.get('is_nullable') else True,
                         'comment': row.get('comment', '').strip() if row.get('comment') else '',
-                        'default': None,
-                        'autoincrement': False,
                         'primary_key': is_primary_key
                     }
                     columns.append(column_info)
@@ -148,6 +145,7 @@ class SchemaEngine:
                 field_name = column['name']
                 field_type = str(column['type'])
                 field_comment = column.get('comment', '').strip()
+                primary_key = column.get('primary_key', False)
                 
                 # 获取示例值
                 try:
@@ -157,9 +155,8 @@ class SchemaEngine:
                 examples = examples_to_str(examples)
 
                 self._mschema.add_field(
-                    table_with_schema, field_name, field_type=field_type, primary_key=False,
-                    nullable=column['nullable'], default=column['default'], 
-                    autoincrement=False, comment=field_comment, examples=examples
+                    table_with_schema, field_name, field_type=field_type, primary_key=primary_key,
+                    comment=field_comment, examples=examples
                 )
 
     def execute_sql(self, sql: str):
